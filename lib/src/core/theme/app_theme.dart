@@ -25,11 +25,6 @@ class AppThemes {
             textStyle: AppTextStyles.bodyText2(context)?.copyWith(fontSize: 16),
           ),
         ),
-        drawerTheme: DrawerThemeData(
-          backgroundColor: AppColors.drawerBackgroundColorDark,
-          scrimColor: AppColors.backgroundColorDark.withOpacity(0.5),
-          elevation: 2.0,
-        ),
         listTileTheme: ListTileTheme.of(context).copyWith(
           iconColor: AppColors.primary,
         ),
@@ -70,11 +65,6 @@ class AppThemes {
             ),
             textStyle: AppTextStyles.bodyText2(context)?.copyWith(fontSize: 16),
           ),
-        ),
-        drawerTheme: DrawerThemeData(
-          backgroundColor: AppColors.drawerBackgroundColorLight,
-          scrimColor: AppColors.white.withOpacity(0.5),
-          elevation: 2.0,
         ),
         listTileTheme: ListTileTheme.of(context).copyWith(
           iconColor: AppColors.primary,

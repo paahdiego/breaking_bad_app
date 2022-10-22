@@ -13,6 +13,8 @@ class AppModule extends Module {
         ChildRoute(
           AppRoutes.home,
           child: (context, _) => const HomePage(),
+          duration: Duration(milliseconds: 700),
+          transition: TransitionType.scale,
         ),
       ];
 }
