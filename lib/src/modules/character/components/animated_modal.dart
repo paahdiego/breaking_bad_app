@@ -40,7 +40,7 @@ class AnimatedModal extends StatelessWidget {
             minWidth: sizes.displayWidth,
             maxWidth: sizes.displayWidth,
             minHeight: 0,
-            maxHeight: shouldExpand ? sizes.displayHeight * 0.5 : 40.0,
+            maxHeight: shouldExpand ? sizes.displayHeight * 0.75 : 40.0,
           ),
           duration: const Duration(milliseconds: 350),
           child: Padding(

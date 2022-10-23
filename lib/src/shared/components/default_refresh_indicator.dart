@@ -15,7 +15,7 @@ class DefaultRefreshIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
-      color: Colors.white,
+      color: AppColors.white,
       backgroundColor: AppColors.primary,
       onRefresh: () => Future.sync(() => onRefresh()),
       child: child,

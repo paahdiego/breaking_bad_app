@@ -1,3 +1,4 @@
+import 'package:breaking_bad_app/src/modules/character/character_controller.dart';
 import 'package:breaking_bad_app/src/modules/character/components/animated_modal.dart';
 import 'package:breaking_bad_app/src/modules/character/components/character_details_data.dart';
 import 'package:breaking_bad_app/src/modules/character/components/modal_header.dart';
@@ -23,8 +24,11 @@ class CharacterDetailsPage extends StatefulWidget {
 }
 
 class _CharacterDetailsPageState extends State<CharacterDetailsPage> {
+  late CharacterController controller;
+
   @override
   void initState() {
+    controller = CharacterController(character: widget.character);
     super.initState();
   }
 
@@ -80,6 +84,10 @@ class _CharacterDetailsPageState extends State<CharacterDetailsPage> {
                           if (showData) ...[
                             CaracterDetailsData(
                               character: widget.character,
+                              valueListenable: controller.quoteNotifier,
+                              onGenerateNewQuote: () {
+                                controller.getRandomQuote();
+                              },
                             ),
                           ]
                         ],

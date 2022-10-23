@@ -50,4 +50,42 @@ class AppColors {
     if (reference.computeLuminance() > 0.5) return fontColorDark;
     return Colors.white;
   }
+
+  static LinearGradient shimmerGradient(BuildContext context) {
+    final themeController = ThemeController.instance(context);
+
+    if (themeController.isDarkModeTurnedOn(context)) return shimmerGradientDark;
+    return shimmerGradientLight;
+  }
+
+  static const shimmerGradientLight = LinearGradient(
+    colors: [
+      Color(0xFFE8EEF2),
+      Color(0xFF0b4944),
+      Color(0xFFE8EEF2),
+    ],
+    stops: [
+      0.1,
+      0.3,
+      0.4,
+    ],
+    begin: Alignment(-1.0, -0.3),
+    end: Alignment(1.0, 0.3),
+    tileMode: TileMode.clamp,
+  );
+  static const shimmerGradientDark = LinearGradient(
+    colors: [
+      Color(0xFF1E1E24),
+      Color(0xFF0b4944),
+      Color(0xFF1E1E24),
+    ],
+    stops: [
+      0.1,
+      0.3,
+      0.4,
+    ],
+    begin: Alignment(-1.0, -0.3),
+    end: Alignment(1.0, 0.3),
+    tileMode: TileMode.clamp,
+  );
 }
