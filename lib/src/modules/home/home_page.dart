@@ -1,7 +1,9 @@
+import 'package:breaking_bad_app/src/core/core.dart';
 import 'package:breaking_bad_app/src/modules/home/components/all_list_items_loaded.dart';
 import 'package:breaking_bad_app/src/modules/home/components/character_list_item.dart';
 import 'package:breaking_bad_app/src/modules/home/components/custom_app_bar.dart';
 import 'package:breaking_bad_app/src/modules/home/components/list_loading_icon.dart';
+import 'package:breaking_bad_app/src/shared/components/app_loading_icon.dart';
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -73,8 +75,20 @@ class _HomePageState extends State<HomePage> {
           },
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
-          child: const Icon(FontAwesomeIcons.clover),
+          onPressed: () {
+            homeController.getRandomCharacter();
+          },
+          child: ValueListenableBuilder(
+            valueListenable: homeController.getRandomNotifier,
+            builder: (context, isLoading, _) {
+              if (isLoading) {
+                return const AppLoadingIcon(
+                  valueColor: AppColors.white,
+                );
+              }
+              return const Icon(FontAwesomeIcons.clover);
+            },
+          ),
         ),
       ),
     );

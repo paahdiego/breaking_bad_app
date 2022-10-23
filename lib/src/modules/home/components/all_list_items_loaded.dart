@@ -10,7 +10,7 @@ class AllListItemsLoaded extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20),
       child: const Center(
-        child: Text("Todos os itens carregados."),
+        child: Text("Todos os personagens carregados."),
       ),
     );
   }
