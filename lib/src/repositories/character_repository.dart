@@ -12,6 +12,7 @@ class CharacterRepository {
   Future<List<CharacterModel>> getCharacters({
     required int pageKey,
     required int pageSize,
+    String? search,
   }) async {
     try {
       final response = await dio.get(
@@ -29,7 +30,7 @@ class CharacterRepository {
 
       final data = List.from(response.data);
 
-      final List<CharacterModel> characters =
+      final characters =
           data.map((element) => CharacterModel.fromMap(element)).toList();
 
       return characters;

@@ -12,11 +12,14 @@ class AppBackgroundContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizes = AppSizes(context);
     final themeController = ThemeController.instance(context);
     return AnimatedBuilder(
       animation: themeController,
       builder: (context, _) {
         return Container(
+          width: sizes.displayWidth,
+          height: sizes.displayHeight,
           decoration: BoxDecoration(
             color: AppColors.backgroundColor(context),
           ),

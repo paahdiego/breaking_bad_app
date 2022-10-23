@@ -40,7 +40,7 @@ class ImageNetworkBuilder extends StatelessWidget {
           );
         }
       },
-      errorBuilder: (context, error, stackTrace) {
+      errorBuilder: (context, error, _) {
         return Container(
           padding: const EdgeInsets.all(5),
           alignment: Alignment.center,

@@ -6,12 +6,10 @@ class AppColors {
   static const Color secondary = Color(0xFFffd621);
   //Light Theme
   static const Color backgroundColorLight = white;
-  static const Color subBackgroundColorLight = Color(0xFFD5D5D5);
   static const Color fontColorLight = Color(0xFF535648);
 
   //Dark Theme
   static const Color backgroundColorDark = black;
-  static const Color subBackgroundColorDark = Color(0xFF88877b);
   static const Color fontColorDark = white;
 
   static const Color white = Color(0xFFfffdf7);
@@ -27,20 +25,18 @@ class AppColors {
     return black;
   }
 
+  static Color primaryOrWhite(BuildContext context) {
+    final themeController = ThemeController.instance(context);
+
+    if (themeController.isDarkModeTurnedOn(context)) return white;
+    return primary;
+  }
+
   static Color backgroundColor(BuildContext context) {
     final themeController = ThemeController.instance(context);
 
     if (themeController.isDarkModeTurnedOn(context)) return backgroundColorDark;
     return backgroundColorLight;
-  }
-
-  static Color subBackgroundColor(BuildContext context) {
-    final themeController = ThemeController.instance(context);
-
-    if (themeController.isDarkModeTurnedOn(context)) {
-      return subBackgroundColorDark;
-    }
-    return subBackgroundColorLight;
   }
 
   static Color fontColor(BuildContext context) {

@@ -10,6 +10,8 @@ class CharacterModel {
   final String img;
   final String status;
   final String nickname;
+  final String portrayed;
+
   CharacterModel({
     required this.id,
     required this.name,
@@ -18,6 +20,7 @@ class CharacterModel {
     required this.img,
     required this.status,
     required this.nickname,
+    required this.portrayed,
   });
 
   CharacterModel copyWith({
@@ -28,6 +31,7 @@ class CharacterModel {
     String? img,
     String? status,
     String? nickname,
+    String? portrayed,
   }) {
     return CharacterModel(
       id: id ?? this.id,
@@ -37,6 +41,7 @@ class CharacterModel {
       img: img ?? this.img,
       status: status ?? this.status,
       nickname: nickname ?? this.nickname,
+      portrayed: portrayed ?? this.portrayed,
     );
   }
 
@@ -49,6 +54,7 @@ class CharacterModel {
       'img': img,
       'status': status,
       'nickname': nickname,
+      'portrayed': portrayed,
     };
   }
 
@@ -61,6 +67,7 @@ class CharacterModel {
       img: map['img'] ?? '',
       status: map['status'] ?? '',
       nickname: map['nickname'] ?? '',
+      portrayed: map['portrayed'] ?? '',
     );
   }
 
@@ -71,7 +78,7 @@ class CharacterModel {
 
   @override
   String toString() {
-    return 'CharacterModel(id: $id, name: $name, birthday: $birthday, occpation: $occupation, img: $img, status: $status, nickname: $nickname)';
+    return 'CharacterModel(id: $id, name: $name, birthday: $birthday, occupation: $occupation, img: $img, status: $status, nickname: $nickname, portrayed: $portrayed)';
   }
 
   @override
@@ -85,7 +92,8 @@ class CharacterModel {
         listEquals(other.occupation, occupation) &&
         other.img == img &&
         other.status == status &&
-        other.nickname == nickname;
+        other.nickname == nickname &&
+        other.portrayed == portrayed;
   }
 
   @override
@@ -96,6 +104,7 @@ class CharacterModel {
         occupation.hashCode ^
         img.hashCode ^
         status.hashCode ^
-        nickname.hashCode;
+        nickname.hashCode ^
+        portrayed.hashCode;
   }
 }

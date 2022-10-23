@@ -16,6 +16,14 @@ class AppThemes {
             textStyle: AppTextStyles.caption(context)?.copyWith(fontSize: 14),
           ),
         ),
+        cardTheme: Theme.of(context).cardTheme.copyWith(
+              color: Colors.grey.shade600,
+            ),
+        floatingActionButtonTheme:
+            Theme.of(context).floatingActionButtonTheme.copyWith(
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: AppColors.white,
+                ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
@@ -51,12 +59,20 @@ class AppThemes {
         appBarTheme: AppBarTheme.of(context).copyWith(
           backgroundColor: AppColors.transparent,
         ),
+        cardTheme: Theme.of(context).cardTheme.copyWith(
+              color: Colors.grey.shade300,
+            ),
         textButtonTheme: TextButtonThemeData(
           style: TextButton.styleFrom(
             foregroundColor: AppColors.primary,
             textStyle: AppTextStyles.caption(context)?.copyWith(fontSize: 14),
           ),
         ),
+        floatingActionButtonTheme:
+            Theme.of(context).floatingActionButtonTheme.copyWith(
+                  backgroundColor: AppColors.primary,
+                  foregroundColor: AppColors.white,
+                ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
