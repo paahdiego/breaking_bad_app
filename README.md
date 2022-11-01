@@ -69,5 +69,3 @@ Breaking Bad App é um aplicativo mobile desenvolvida em Flutter com a possibili
 ## Licença
 
 Distributed under the MIT License. See `LICENSE` for more information
-
-A new Flutter project.
