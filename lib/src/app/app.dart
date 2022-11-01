@@ -20,7 +20,7 @@ class App extends StatelessWidget {
           builder: (context, themeController, __) {
             return OverlaySupport.global(
               child: MaterialApp.router(
-                title: 'Notes App',
+                title: 'Breaking Bad App',
                 debugShowCheckedModeBanner: false,
                 theme: AppThemes.lightTheme(context),
                 darkTheme: AppThemes.darkTheme(context),

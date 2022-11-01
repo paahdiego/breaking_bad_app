@@ -6,19 +6,22 @@ import 'package:breaking_bad_app/src/modules/splash/splash_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 class AppModule extends Module {
-  final animationDuration = const Duration(microseconds: 600);
+  final animationDuration = const Duration(milliseconds: 600);
+  final transition = TransitionType.scale;
 
   @override
   List<ModularRoute> get routes => [
         ChildRoute(
           AppRoutes.splash,
           child: (context, _) => const SplashPage(),
+          duration: animationDuration,
+          transition: transition,
         ),
         ChildRoute(
           AppRoutes.home,
           child: (context, _) => const HomePage(),
           duration: animationDuration,
-          transition: TransitionType.scale,
+          transition: transition,
         ),
         ChildRoute(
           AppRoutes.characterDetails,
@@ -27,7 +30,7 @@ class AppModule extends Module {
             return CharacterDetailsPage(character: character);
           },
           duration: animationDuration,
-          transition: TransitionType.scale,
+          transition: transition,
         ),
       ];
 }

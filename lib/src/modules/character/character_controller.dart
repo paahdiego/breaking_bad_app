@@ -21,7 +21,7 @@ class CharacterController {
   Future<void> getRandomQuote() async {
     quoteState = QuoteStateLoading();
 
-    await Future.delayed(const Duration(seconds: 2));
+    await Future.delayed(const Duration(milliseconds: 500));
 
     try {
       final response = await quoteRepository.getRandomQuote(
